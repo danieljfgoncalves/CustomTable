@@ -49,10 +49,10 @@ Recipe *myRecipes;
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     static NSString *cellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    cell.textLabel.text = [myRecipes.recipeNames objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:[myRecipes.recipeImages objectAtIndex:indexPath.row]];
+    cell.nameLabel.text = [myRecipes.recipeNames objectAtIndex:indexPath.row];
+    cell.thumbnailImageView.image = [UIImage imageNamed:[myRecipes.recipeImages objectAtIndex:indexPath.row]];
     
     return cell;
 }

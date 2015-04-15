@@ -15,6 +15,7 @@
 		E4138C071ADD95EE00455A98 /* CustomTableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C061ADD95EE00455A98 /* CustomTableTests.m */; };
 		E4138C171ADD98DB00455A98 /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C161ADD98DB00455A98 /* CustomTableViewController.m */; };
 		E4138C1A1ADE213500455A98 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C191ADE213500455A98 /* Recipe.m */; };
+		E4138C1E1ADE2B4C00455A98 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C1D1ADE2B4C00455A98 /* CustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		E4138C161ADD98DB00455A98 /* CustomTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewController.m; sourceTree = "<group>"; };
 		E4138C181ADE213500455A98 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
 		E4138C191ADE213500455A98 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		E4138C1C1ADE2B4C00455A98 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		E4138C1D1ADE2B4C00455A98 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				E4138C101ADD960100455A98 /* Model */,
+				E4138C1B1ADE2B1200455A98 /* View */,
 				E4138C111ADD960700455A98 /* Controller */,
 				E4138BE91ADD95EE00455A98 /* CustomTable */,
 				E4138C031ADD95EE00455A98 /* CustomTableTests */,
@@ -138,6 +142,15 @@
 				E4138C161ADD98DB00455A98 /* CustomTableViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		E4138C1B1ADE2B1200455A98 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4138C1C1ADE2B4C00455A98 /* CustomTableViewCell.h */,
+				E4138C1D1ADE2B4C00455A98 /* CustomTableViewCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +256,7 @@
 				E4138BF01ADD95EE00455A98 /* AppDelegate.m in Sources */,
 				E4138C171ADD98DB00455A98 /* CustomTableViewController.m in Sources */,
 				E4138BED1ADD95EE00455A98 /* main.m in Sources */,
+				E4138C1E1ADE2B4C00455A98 /* CustomTableViewCell.m in Sources */,
 				E4138C1A1ADE213500455A98 /* Recipe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
