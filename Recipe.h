@@ -11,5 +11,6 @@
 @interface Recipe : NSObject
 
 @property (strong, nonatomic)NSArray *recipeNames;
+@property (strong, nonatomic)NSArray *recipeImages;
 
 @end

@@ -52,7 +52,7 @@ Recipe *myRecipes;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     cell.textLabel.text = [myRecipes.recipeNames objectAtIndex:indexPath.row];
-    cell.imageView.image = [UIImage imageNamed:@"creme_brelee"];
+    cell.imageView.image = [UIImage imageNamed:[myRecipes.recipeImages objectAtIndex:indexPath.row]];
     
     return cell;
 }
