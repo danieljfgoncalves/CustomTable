@@ -53,6 +53,7 @@ Recipe *myRecipes;
     
     cell.nameLabel.text = [myRecipes.recipeNames objectAtIndex:indexPath.row];
     cell.thumbnailImageView.image = [UIImage imageNamed:[myRecipes.recipeImages objectAtIndex:indexPath.row]];
+    cell.prepTimeLabel.text = [myRecipes.prepTime objectAtIndex:indexPath.row];
     
     return cell;
 }

@@ -24,6 +24,8 @@
                           @"instant_noodle_with_egg.jpg", @"noodle_with_bbq_pork.jpg",
                           @"japanese_noodle_with_pork.jpg", @"green_tea.jpg", @"thai_shrimp_cake.jpg",
                           @"angry_birds_cake.jpg", @"ham_and_cheese_panini.jpg"];
+        
+        _prepTime = @[@"20 min",@"30 min",@"25 min",@"10 min",@"20 min",@"30 min",@"10 min",@"35 min",@"30 min",@"20 min",@"10 min",@"20 min",@"25 min",@"30 min",@"10 min",@"20 min",];
     }
     return self;
 }
