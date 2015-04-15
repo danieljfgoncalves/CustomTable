@@ -74,7 +74,14 @@ BOOL recipeChecked[16];
     [messageAlert show];
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    // cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    // Toggle Checkmark ON & OFF
+    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } // So if upon selection the Checkmark is there, remove it, else add it.
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     recipeChecked[indexPath.row] = YES;
