@@ -15,6 +15,7 @@
 @implementation CustomTableViewController
 
 Recipe *myRecipes;
+BOOL recipeChecked[16];
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,6 +56,12 @@ Recipe *myRecipes;
     cell.thumbnailImageView.image = [UIImage imageNamed:[myRecipes.recipeImages objectAtIndex:indexPath.row]];
     cell.prepTimeLabel.text = [myRecipes.prepTime objectAtIndex:indexPath.row];
     
+    if (recipeChecked[indexPath.row]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     return cell;
 }
 
@@ -70,6 +77,7 @@ Recipe *myRecipes;
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    recipeChecked[indexPath.row] = YES;
 }
 
 /*

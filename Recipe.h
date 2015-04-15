@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic)NSArray *recipeNames;
 @property (strong, nonatomic)NSArray *recipeImages;
-
 @property (strong, nonatomic)NSArray *prepTime;
+
 
 @end
