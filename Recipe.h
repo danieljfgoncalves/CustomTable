@@ -10,9 +10,9 @@
 
 @interface Recipe : NSObject
 
-@property (strong, nonatomic)NSArray *recipeNames;
-@property (strong, nonatomic)NSArray *recipeImages;
-@property (strong, nonatomic)NSArray *prepTime;
+@property (strong, nonatomic)NSMutableArray *recipeNames;
+@property (strong, nonatomic)NSMutableArray *recipeImages;
+@property (strong, nonatomic)NSMutableArray *prepTime;
 
 
 @end
