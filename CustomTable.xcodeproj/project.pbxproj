@@ -16,6 +16,7 @@
 		E4138C171ADD98DB00455A98 /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C161ADD98DB00455A98 /* CustomTableViewController.m */; };
 		E4138C1A1ADE213500455A98 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C191ADE213500455A98 /* Recipe.m */; };
 		E4138C1E1ADE2B4C00455A98 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C1D1ADE2B4C00455A98 /* CustomTableViewCell.m */; };
+		E4256AD21AE17A99008E1B85 /* recipes.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4256AD11AE17A99008E1B85 /* recipes.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E4138C191ADE213500455A98 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		E4138C1C1ADE2B4C00455A98 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		E4138C1D1ADE2B4C00455A98 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		E4256AD11AE17A99008E1B85 /* recipes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = recipes.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		E4138BEA1ADD95EE00455A98 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E4256AD11AE17A99008E1B85 /* recipes.plist */,
 				E4138BEB1ADD95EE00455A98 /* Info.plist */,
 				E4138BEC1ADD95EE00455A98 /* main.m */,
 			);
@@ -236,6 +239,7 @@
 			files = (
 				E4138BF61ADD95EE00455A98 /* Main.storyboard in Resources */,
 				E4138BFB1ADD95EE00455A98 /* LaunchScreen.xib in Resources */,
+				E4256AD21AE17A99008E1B85 /* recipes.plist in Resources */,
 				E4138BF81ADD95EE00455A98 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
