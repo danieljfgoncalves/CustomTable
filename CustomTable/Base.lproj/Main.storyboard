@@ -2,9 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bnU-Sg-wbq">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Custom Table View Controller-->
+        <!--Recipes-->
         <scene sceneID="Ere-x5-h27">
             <objects>
                 <tableViewController id="16i-Rg-9yv" customClass="CustomTableViewController" sceneMemberID="viewController">
@@ -13,7 +14,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="71" id="BiO-Hq-TZW" customClass="CustomTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="71" id="BiO-Hq-TZW" customClass="CustomTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BiO-Hq-TZW" id="be4-ou-kEZ">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -39,6 +40,7 @@
                                     <outlet property="nameLabel" destination="Xhf-JJ-udg" id="Erf-t6-J5t"/>
                                     <outlet property="prepTimeLabel" destination="m7M-zK-Pac" id="hah-iM-gGS"/>
                                     <outlet property="thumbnailImageView" destination="g9J-ps-FcZ" id="BqF-Ng-PDT"/>
+                                    <segue destination="12W-D1-24z" kind="push" id="eAC-A6-8ff"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -48,11 +50,43 @@
                             <outlet property="delegate" destination="16i-Rg-9yv" id="hmK-Y9-YEY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ox2-sY-SnG"/>
+                    <navigationItem key="navigationItem" title="Recipes" id="ox2-sY-SnG"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgo-vb-APN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="699" y="351"/>
+        </scene>
+        <!--DetailViewController-->
+        <scene sceneID="d9I-O4-T4x">
+            <objects>
+                <viewController title="DetailViewController" id="12W-D1-24z" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ROT-mX-VfO"/>
+                        <viewControllerLayoutGuide type="bottom" id="BAE-0x-2Wb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aXU-9y-X9u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sf3-UT-VFe">
+                                <rect key="frame" x="0.0" y="244" width="320" height="80"/>
+                                <color key="backgroundColor" red="0.33920922110000001" green="0.5" blue="0.1727249095" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="sf3-UT-VFe" secondAttribute="trailing" constant="-16" id="ccw-Vv-igd"/>
+                            <constraint firstItem="sf3-UT-VFe" firstAttribute="leading" secondItem="aXU-9y-X9u" secondAttribute="leadingMargin" constant="-16" id="eM9-WR-j2O"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="A6e-HP-oOQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KwZ-Nl-kcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090" y="351"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Oxw-mq-9Wr">
