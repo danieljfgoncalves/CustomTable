@@ -90,9 +90,11 @@ BOOL recipeChecked[16];
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     // Even if this method is empty, you can see the Delete Button as you swipe the row.
     // Delete Method.
+    
+    
     [myRecipes.recipeNames removeObjectAtIndex:indexPath.row];
-    [myRecipes.recipeImages removeObjectAtIndex:indexPath.row];
-    [myRecipes.prepTime removeObjectAtIndex:indexPath.row];
+//    [myRecipes.recipeImages removeObjectAtIndex:indexPath.row];
+//    [myRecipes.prepTime removeObjectAtIndex:indexPath.row];
     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
