@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Recipe.h"
+
 #import "CustomTableViewCell.h"
 
 @interface CustomTableViewController : UITableViewController

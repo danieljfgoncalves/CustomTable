@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bnU-Sg-wbq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bnU-Sg-wbq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -40,7 +40,7 @@
                                     <outlet property="nameLabel" destination="Xhf-JJ-udg" id="Erf-t6-J5t"/>
                                     <outlet property="prepTimeLabel" destination="m7M-zK-Pac" id="hah-iM-gGS"/>
                                     <outlet property="thumbnailImageView" destination="g9J-ps-FcZ" id="BqF-Ng-PDT"/>
-                                    <segue destination="12W-D1-24z" kind="push" id="eAC-A6-8ff"/>
+                                    <segue destination="12W-D1-24z" kind="push" identifier="showRecipeDetail" id="eAC-A6-8ff"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -54,12 +54,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cgo-vb-APN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="699" y="351"/>
+            <point key="canvasLocation" x="672" y="351"/>
         </scene>
         <!--DetailViewController-->
         <scene sceneID="d9I-O4-T4x">
             <objects>
-                <viewController title="DetailViewController" id="12W-D1-24z" sceneMemberID="viewController">
+                <viewController title="DetailViewController" id="12W-D1-24z" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ROT-mX-VfO"/>
                         <viewControllerLayoutGuide type="bottom" id="BAE-0x-2Wb"/>
@@ -68,7 +68,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sf3-UT-VFe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="recipeLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sf3-UT-VFe">
                                 <rect key="frame" x="0.0" y="244" width="320" height="80"/>
                                 <color key="backgroundColor" red="0.33920922110000001" green="0.5" blue="0.1727249095" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
@@ -82,7 +82,10 @@
                             <constraint firstItem="sf3-UT-VFe" firstAttribute="leading" secondItem="aXU-9y-X9u" secondAttribute="leadingMargin" constant="-16" id="eM9-WR-j2O"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="A6e-HP-oOQ"/>
+                    <navigationItem key="navigationItem" title="Recipe Details" id="A6e-HP-oOQ"/>
+                    <connections>
+                        <outlet property="recipeLabel" destination="sf3-UT-VFe" id="yob-ba-R0E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KwZ-Nl-kcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

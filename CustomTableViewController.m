@@ -7,6 +7,8 @@
 //
 
 #import "CustomTableViewController.h"
+#import "Recipe.h"
+#import "DetailViewController.h"
 
 @interface CustomTableViewController ()
 
@@ -67,24 +69,24 @@ BOOL recipeChecked[16];
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *selectedRecipe = [myRecipes.recipeNames objectAtIndex:indexPath.row];
-    UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Row Selected" message:selectedRecipe delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    
-    // Display Message
-    [messageAlert show];
-    
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    // cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
-    // Toggle Checkmark ON & OFF
-    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } // So if upon selection the Checkmark is there, remove it, else add it.
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    recipeChecked[indexPath.row] = YES;
+//    NSString *selectedRecipe = [myRecipes.recipeNames objectAtIndex:indexPath.row];
+//    UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Row Selected" message:selectedRecipe delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+//    
+//    // Display Message
+//    [messageAlert show];
+//    
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    // cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    
+//    // Toggle Checkmark ON & OFF
+//    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    } else {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    } // So if upon selection the Checkmark is there, remove it, else add it.
+//    
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    recipeChecked[indexPath.row] = YES;
 }
 
 //-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -97,6 +99,22 @@ BOOL recipeChecked[16];
 ////    [myRecipes.prepTime removeObjectAtIndex:indexPath.row];
 //    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 //}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // Connecting ViewControllers with segue.
+    if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        DetailViewController *destViewController = segue.destinationViewController;
+        destViewController.recipeName = [myRecipes.recipeNames objectAtIndex:indexPath.row];
+    }
+}
+
+
+
+
+
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

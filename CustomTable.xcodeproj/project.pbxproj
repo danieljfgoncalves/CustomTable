@@ -17,6 +17,7 @@
 		E4138C1A1ADE213500455A98 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C191ADE213500455A98 /* Recipe.m */; };
 		E4138C1E1ADE2B4C00455A98 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C1D1ADE2B4C00455A98 /* CustomTableViewCell.m */; };
 		E4256AD21AE17A99008E1B85 /* recipes.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4256AD11AE17A99008E1B85 /* recipes.plist */; };
+		E4AF64AC1AEABC2700377B5B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AF64AB1AEABC2700377B5B /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		E4138C1C1ADE2B4C00455A98 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		E4138C1D1ADE2B4C00455A98 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		E4256AD11AE17A99008E1B85 /* recipes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = recipes.plist; sourceTree = "<group>"; };
+		E4AF64AA1AEABC2700377B5B /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		E4AF64AB1AEABC2700377B5B /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +146,8 @@
 			children = (
 				E4138C151ADD98DB00455A98 /* CustomTableViewController.h */,
 				E4138C161ADD98DB00455A98 /* CustomTableViewController.m */,
+				E4AF64AA1AEABC2700377B5B /* DetailViewController.h */,
+				E4AF64AB1AEABC2700377B5B /* DetailViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				E4138BED1ADD95EE00455A98 /* main.m in Sources */,
 				E4138C1E1ADE2B4C00455A98 /* CustomTableViewCell.m in Sources */,
 				E4138C1A1ADE213500455A98 /* Recipe.m in Sources */,
+				E4AF64AC1AEABC2700377B5B /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
