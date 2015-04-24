@@ -16,5 +16,8 @@
 @property (nonatomic, strong) NSString *prepTime;
 @property (nonatomic, strong) IBOutlet UILabel *prepTimeLabel;
 
+@property (nonatomic, strong) NSString *recipeImage;
+@property (nonatomic, strong) IBOutlet UIImageView *recipeImageView;
+
 
 @end

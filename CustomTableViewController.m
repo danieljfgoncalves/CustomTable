@@ -108,8 +108,10 @@ BOOL recipeChecked[16];
         DetailViewController *destViewController = segue.destinationViewController;
         destViewController.recipeName = [myRecipes.recipeNames objectAtIndex:indexPath.row];
         destViewController.prepTime = [myRecipes.prepTime objectAtIndex:indexPath.row];
+        destViewController.recipeImage = [myRecipes.recipeImages objectAtIndex:indexPath.row];
     }
 }
+
 
 
 

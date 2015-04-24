@@ -1,30 +1,30 @@
 //
-//  DetailViewController.m
+//  AboutViewController.m
 //  CustomTable
 //
 //  Created by Daniel Goncalves on 2015-04-24.
 //  Copyright (c) 2015 Daniel J Goncalves. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "AboutViewController.h"
 
-@interface DetailViewController ()
+@interface AboutViewController ()
 
 @end
 
-@implementation DetailViewController
+@implementation AboutViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Set the Label text with the selected recipe
-    self.recipeLabel.text = self.recipeName;
-    self.prepTimeLabel.text = self.prepTime;
-    self.recipeImageView.image = [UIImage imageNamed:self.recipeImage];
+    // Add code to load web content in UIWebView
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle]pathForResource:@"about.html" ofType:nil]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:request];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 /*
