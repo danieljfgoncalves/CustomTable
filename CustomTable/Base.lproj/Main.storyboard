@@ -68,22 +68,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="recipeLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sf3-UT-VFe">
-                                <rect key="frame" x="0.0" y="244" width="320" height="80"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipeLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sf3-UT-VFe">
+                                <rect key="frame" x="0.0" y="117" width="320" height="80"/>
                                 <color key="backgroundColor" red="0.33920922110000001" green="0.5" blue="0.1727249095" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="prepTimeLabel" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ean-DI-UtD">
+                                <rect key="frame" x="187" y="205" width="117" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="D9D-Sp-Mgl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="sf3-UT-VFe" secondAttribute="trailing" constant="-16" id="ccw-Vv-igd"/>
-                            <constraint firstItem="sf3-UT-VFe" firstAttribute="leading" secondItem="aXU-9y-X9u" secondAttribute="leadingMargin" constant="-16" id="eM9-WR-j2O"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sf3-UT-VFe" secondAttribute="trailing" constant="-16" id="3bv-3S-9Od"/>
+                            <constraint firstItem="Ean-DI-UtD" firstAttribute="trailing" secondItem="aXU-9y-X9u" secondAttribute="trailingMargin" id="Awy-wv-5fp"/>
+                            <constraint firstItem="Ean-DI-UtD" firstAttribute="leading" secondItem="aXU-9y-X9u" secondAttribute="leadingMargin" constant="171" id="LaK-ca-APh"/>
+                            <constraint firstItem="BAE-0x-2Wb" firstAttribute="top" secondItem="Ean-DI-UtD" secondAttribute="bottom" constant="342" id="d5Y-4J-gWS"/>
+                            <constraint firstItem="sf3-UT-VFe" firstAttribute="top" secondItem="ROT-mX-VfO" secondAttribute="bottom" constant="53" id="dlF-xA-B53"/>
+                            <constraint firstItem="sf3-UT-VFe" firstAttribute="leading" secondItem="aXU-9y-X9u" secondAttribute="leadingMargin" constant="-16" id="fU9-eH-cUM"/>
+                            <constraint firstItem="Ean-DI-UtD" firstAttribute="top" secondItem="sf3-UT-VFe" secondAttribute="bottom" constant="8" id="z4c-BC-XnU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe Details" id="A6e-HP-oOQ"/>
                     <connections>
+                        <outlet property="prepTimeLabel" destination="Ean-DI-UtD" id="B32-e5-0CP"/>
                         <outlet property="recipeLabel" destination="sf3-UT-VFe" id="yob-ba-R0E"/>
                     </connections>
                 </viewController>

@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Set the Label text with the selected recipe
     self.recipeLabel.text = self.recipeName;
+    self.prepTimeLabel.text = self.prepTime;
 }
 
 - (void)didReceiveMemoryWarning {

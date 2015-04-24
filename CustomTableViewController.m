@@ -107,6 +107,7 @@ BOOL recipeChecked[16];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         DetailViewController *destViewController = segue.destinationViewController;
         destViewController.recipeName = [myRecipes.recipeNames objectAtIndex:indexPath.row];
+        destViewController.prepTime = [myRecipes.prepTime objectAtIndex:indexPath.row];
     }
 }
 
