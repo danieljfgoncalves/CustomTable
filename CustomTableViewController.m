@@ -67,12 +67,17 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // initialize a recipe class at indexPath of the MutuableArray recipes.
-    
-    Recipe *recipe = self.recipes[indexPath.row];
     
     static NSString *cellIdentifier = @"Cell";
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    //    Configure the cell...
+    if (cell == nil) {
+        cell = [[CustomTableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    
+    // initialize a recipe class at indexPath of the MutuableArray recipes.
+    Recipe *recipe = self.recipes[indexPath.row];
     
     cell.nameLabel.text = recipe.name;
     cell.thumbnailImageView.image = [UIImage imageNamed:recipe.image];
