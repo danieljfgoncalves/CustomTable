@@ -10,18 +10,19 @@
 
 @implementation Recipe
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"recipes" ofType:@"plist"];
-        NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
-        _recipeNames = [dict objectForKey:@"Name"];
-        _recipeImages = [dict objectForKey:@"Image"];
-        _prepTime = [dict objectForKey:@"PrepTime"];
-        
-    }
-    return self;
-}
+
+//- (instancetype)init
+//{
+//    self = [super init];
+//    if (self) {
+//        NSString *path = [[NSBundle mainBundle]pathForResource:@"recipes" ofType:@"plist"];
+//        NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
+//        _recipeNames = [dict objectForKey:@"Name"];
+//        _recipeImages = [dict objectForKey:@"Image"];
+//        _prepTime = [dict objectForKey:@"PrepTime"];
+//        
+//    }
+//    return self;
+//}
 @end
 

@@ -16,12 +16,28 @@
 
 @implementation CustomTableViewController
 
-Recipe *myRecipes;
-BOOL recipeChecked[16];
+//Recipe *myRecipes;
+//BOOL recipeChecked[16];
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    myRecipes = [[Recipe alloc]init];
+//    myRecipes = [[Recipe alloc]init];
+    
+    // Set a Mutable Array to store all data from plist.
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"recipes" ofType:@"plist"];
+    NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
+    NSArray *recipeNames = [dict objectForKey:@"Name"];
+    NSArray *recipeImages = [dict objectForKey:@"Image"];
+    NSArray *prepTimes = [dict objectForKey:@"PrepTime"];
+    
+    self.recipes = [[NSMutableArray alloc]init];
+    for (int i = 0; i < recipeNames.count; i++) {
+        Recipe *recipeInstance = [[Recipe alloc]init];
+        recipeInstance.name = recipeNames[i];
+        recipeInstance.prepTime = prepTimes[i];
+        recipeInstance.image = recipeImages[i];
+        [self.recipes addObject:recipeInstance];
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -46,48 +62,52 @@ BOOL recipeChecked[16];
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [myRecipes.recipeNames count];
+    return [self.recipes count];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    // initialize a recipe class at indexPath of the MutuableArray recipes.
+    
+    Recipe *recipe = self.recipes[indexPath.row];
+    
     static NSString *cellIdentifier = @"Cell";
     CustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    cell.nameLabel.text = [myRecipes.recipeNames objectAtIndex:indexPath.row];
-    cell.thumbnailImageView.image = [UIImage imageNamed:[myRecipes.recipeImages objectAtIndex:indexPath.row]];
-    cell.prepTimeLabel.text = [myRecipes.prepTime objectAtIndex:indexPath.row];
+    cell.nameLabel.text = recipe.name;
+    cell.thumbnailImageView.image = [UIImage imageNamed:recipe.image];
+    cell.prepTimeLabel.text = recipe.prepTime;
     
-    if (recipeChecked[indexPath.row]) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+//    if (recipeChecked[indexPath.row]) {
+//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+//    } else {
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    }
     
     return cell;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    NSString *selectedRecipe = [myRecipes.recipeNames objectAtIndex:indexPath.row];
-//    UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Row Selected" message:selectedRecipe delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    
-//    // Display Message
-//    [messageAlert show];
-//    
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//    // cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    
-//    // Toggle Checkmark ON & OFF
-//    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
-//        cell.accessoryType = UITableViewCellAccessoryNone;
-//    } else {
-//        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-//    } // So if upon selection the Checkmark is there, remove it, else add it.
-//    
-//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//    recipeChecked[indexPath.row] = YES;
-}
+////    NSString *selectedRecipe = [myRecipes.recipeNames objectAtIndex:indexPath.row];
+////    UIAlertView *messageAlert = [[UIAlertView alloc] initWithTitle:@"Row Selected" message:selectedRecipe delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+////    
+////    // Display Message
+////    [messageAlert show];
+////    
+////    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+////    // cell.accessoryType = UITableViewCellAccessoryCheckmark;
+////    
+////    // Toggle Checkmark ON & OFF
+////    if (cell.accessoryType == UITableViewCellAccessoryCheckmark) {
+////        cell.accessoryType = UITableViewCellAccessoryNone;
+////    } else {
+////        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+////    } // So if upon selection the Checkmark is there, remove it, else add it.
+////    
+////    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+////    recipeChecked[indexPath.row] = YES;
+//}
 
 //-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 //    // Even if this method is empty, you can see the Delete Button as you swipe the row.
@@ -105,10 +125,12 @@ BOOL recipeChecked[16];
     // Connecting ViewControllers with segue.
     if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Recipe *recipe = self.recipes[indexPath.row];
+        
         DetailViewController *destViewController = segue.destinationViewController;
-        destViewController.recipeName = [myRecipes.recipeNames objectAtIndex:indexPath.row];
-        destViewController.prepTime = [myRecipes.prepTime objectAtIndex:indexPath.row];
-        destViewController.recipeImage = [myRecipes.recipeImages objectAtIndex:indexPath.row];
+        destViewController.recipeName = recipe.name;
+        destViewController.prepTime = recipe.prepTime;
+        destViewController.recipeImage = recipe.image;
     }
 }
 

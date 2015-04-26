@@ -12,4 +12,6 @@
 
 @interface CustomTableViewController : UITableViewController
 
+@property (nonatomic, strong) NSMutableArray *recipes;
+
 @end
