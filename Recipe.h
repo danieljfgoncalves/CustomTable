@@ -18,5 +18,7 @@
 @property (strong, nonatomic)NSString *image;
 @property (strong, nonatomic)NSString *prepTime;
 
+@property (strong, nonatomic)NSArray *ingredients;
+
 
 @end

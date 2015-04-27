@@ -28,16 +28,22 @@
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
     NSArray *recipeNames = [dict objectForKey:@"Name"];
     NSArray *recipeImages = [dict objectForKey:@"Image"];
-    NSArray *prepTimes = [dict objectForKey:@"PrepTime"];
+    NSArray *recipePrepTimes = [dict objectForKey:@"PrepTime"];
+    NSArray *recipeIngredients = [dict objectForKey:@"Ingredients"];
+    
+    
     
     self.recipes = [[NSMutableArray alloc]init];
     for (int i = 0; i < recipeNames.count; i++) {
         Recipe *recipeInstance = [[Recipe alloc]init];
         recipeInstance.name = recipeNames[i];
-        recipeInstance.prepTime = prepTimes[i];
+        recipeInstance.prepTime = recipePrepTimes[i];
         recipeInstance.image = recipeImages[i];
+        recipeInstance.ingredients = recipeIngredients[i];
         [self.recipes addObject:recipeInstance];
     }
+    
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -133,9 +139,7 @@
         Recipe *recipe = self.recipes[indexPath.row];
         
         DetailViewController *destViewController = segue.destinationViewController;
-        destViewController.recipeName = recipe.name;
-        destViewController.prepTime = recipe.prepTime;
-        destViewController.recipeImage = recipe.image;
+        destViewController.recipe = recipe;
     }
 }
 
