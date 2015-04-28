@@ -23,6 +23,15 @@
     [super viewDidLoad];
 //    myRecipes = [[Recipe alloc]init];
     
+    // Add a Search Feature
+    self.searchController = [[UISearchController alloc]initWithSearchResultsController:nil];
+    [self.searchController.searchBar sizeToFit];
+    self.tableView.tableHeaderView = self.searchController.searchBar;
+    self.definesPresentationContext = YES;
+    
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    
     // Set a Mutable Array to store all data from plist.
     NSString *path = [[NSBundle mainBundle]pathForResource:@"recipes" ofType:@"plist"];
     NSDictionary *dict = [[NSDictionary alloc] initWithContentsOfFile:path];
@@ -68,7 +77,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.recipes count];
+    
+    if (self.searchController.active) {
+        return self.searchResults.count;
+    } else {
+        return [self.recipes count];
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,7 +97,13 @@
     }
     
     // initialize a recipe class at indexPath of the MutuableArray recipes.
-    Recipe *recipe = self.recipes[indexPath.row];
+    Recipe *recipe;
+    
+    if (self.searchController.active) {
+        recipe = self.searchResults[indexPath.row];
+    } else {
+        recipe = self.recipes[indexPath.row];
+    }
     
     cell.nameLabel.text = recipe.name;
     cell.thumbnailImageView.image = [UIImage imageNamed:recipe.image];
@@ -136,13 +156,32 @@
     // Connecting ViewControllers with segue.
     if ([segue.identifier isEqualToString:@"showRecipeDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Recipe *recipe = self.recipes[indexPath.row];
+        Recipe *recipe;
+        
+        if (self.searchController.active) {
+            recipe = self.searchResults[indexPath.row];
+        } else {
+            recipe = self.recipes[indexPath.row];
+        }
         
         DetailViewController *destViewController = segue.destinationViewController;
         destViewController.recipe = recipe;
     }
 }
 
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    
+    [self filterContentForSearchText:self.searchController.searchBar.text];
+    [self.tableView reloadData];
+    
+}
+
+- (void)filterContentForSearchText:(NSString *)searchText {
+    
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains [c]%@", searchText];
+    self.searchResults = [self.recipes filteredArrayUsingPredicate:resultPredicate];
+    
+}
 
 
 

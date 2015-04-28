@@ -10,8 +10,12 @@
 
 #import "CustomTableViewCell.h"
 
-@interface CustomTableViewController : UITableViewController
+@interface CustomTableViewController : UITableViewController<UISearchResultsUpdating>
 
 @property (nonatomic, strong) NSMutableArray *recipes;
+
+@property (nonatomic, strong) UISearchController *searchController;
+
+@property (nonatomic, strong) NSArray *searchResults;
 
 @end
