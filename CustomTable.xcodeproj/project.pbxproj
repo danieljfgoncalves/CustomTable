@@ -16,6 +16,8 @@
 		E4138C171ADD98DB00455A98 /* CustomTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C161ADD98DB00455A98 /* CustomTableViewController.m */; };
 		E4138C1A1ADE213500455A98 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C191ADE213500455A98 /* Recipe.m */; };
 		E4138C1E1ADE2B4C00455A98 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4138C1D1ADE2B4C00455A98 /* CustomTableViewCell.m */; };
+		E423D05D1AF15A29000FF822 /* RecipeCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E423D05C1AF15A29000FF822 /* RecipeCollectionViewController.m */; };
+		E423D0601AF1695B000FF822 /* RecipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E423D05F1AF1695B000FF822 /* RecipeCollectionViewCell.m */; };
 		E4256AD21AE17A99008E1B85 /* recipes.plist in Resources */ = {isa = PBXBuildFile; fileRef = E4256AD11AE17A99008E1B85 /* recipes.plist */; };
 		E4AF64AC1AEABC2700377B5B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AF64AB1AEABC2700377B5B /* DetailViewController.m */; };
 		E4AF64AF1AEACDA200377B5B /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AF64AE1AEACDA200377B5B /* AboutViewController.m */; };
@@ -51,6 +53,10 @@
 		E4138C191ADE213500455A98 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		E4138C1C1ADE2B4C00455A98 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
 		E4138C1D1ADE2B4C00455A98 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		E423D05B1AF15A29000FF822 /* RecipeCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionViewController.h; sourceTree = "<group>"; };
+		E423D05C1AF15A29000FF822 /* RecipeCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionViewController.m; sourceTree = "<group>"; };
+		E423D05E1AF1695B000FF822 /* RecipeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionViewCell.h; sourceTree = "<group>"; };
+		E423D05F1AF1695B000FF822 /* RecipeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionViewCell.m; sourceTree = "<group>"; };
 		E4256AD11AE17A99008E1B85 /* recipes.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = recipes.plist; sourceTree = "<group>"; };
 		E4AF64AA1AEABC2700377B5B /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		E4AF64AB1AEABC2700377B5B /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
@@ -159,6 +165,8 @@
 				E4AF64AB1AEABC2700377B5B /* DetailViewController.m */,
 				E4AF64AD1AEACDA200377B5B /* AboutViewController.h */,
 				E4AF64AE1AEACDA200377B5B /* AboutViewController.m */,
+				E423D05B1AF15A29000FF822 /* RecipeCollectionViewController.h */,
+				E423D05C1AF15A29000FF822 /* RecipeCollectionViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -168,6 +176,8 @@
 			children = (
 				E4138C1C1ADE2B4C00455A98 /* CustomTableViewCell.h */,
 				E4138C1D1ADE2B4C00455A98 /* CustomTableViewCell.m */,
+				E423D05E1AF1695B000FF822 /* RecipeCollectionViewCell.h */,
+				E423D05F1AF1695B000FF822 /* RecipeCollectionViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -280,6 +290,8 @@
 				E4138C171ADD98DB00455A98 /* CustomTableViewController.m in Sources */,
 				E4138BED1ADD95EE00455A98 /* main.m in Sources */,
 				E4AF64AF1AEACDA200377B5B /* AboutViewController.m in Sources */,
+				E423D05D1AF15A29000FF822 /* RecipeCollectionViewController.m in Sources */,
+				E423D0601AF1695B000FF822 /* RecipeCollectionViewCell.m in Sources */,
 				E4138C1E1ADE2B4C00455A98 /* CustomTableViewCell.m in Sources */,
 				E4138C1A1ADE213500455A98 /* Recipe.m in Sources */,
 				E4AF64AC1AEABC2700377B5B /* DetailViewController.m in Sources */,
